@@ -15,6 +15,18 @@ div {
     /* border: 1px solid green; */
 }
 
+
+#mainLink {
+    text-decoration: none;
+    color: #d4d4d4;
+    padding: 5px;
+}
+
+#mainLink:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
 .container {
     height: 90vh !important;
     transform: translateY(5vh);
