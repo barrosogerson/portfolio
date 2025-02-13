@@ -96,9 +96,12 @@
                     <div class="col-12">
                         <div class="row">
                             <div class="col-9" id="winbuttons">
-                                <i class="bi bi-circle-fill close"></i>
-                                <i class="bi bi-circle-fill min"></i>
-                                <i class="bi bi-circle-fill max"></i>
+                                <i data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="This is..."
+                                    class="bi bi-circle-fill close"></i>
+                                <i data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="not a ..."
+                                    class="bi bi-circle-fill min"></i>
+                                <i data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="desktop app :)"
+                                    class="bi bi-circle-fill max"></i>
                                 <span class="text-center">EXPLORER</span>
                             </div>
                             <div class="col-2 div3dots">
@@ -146,22 +149,22 @@
                                 <div class="collapse multi-collapse show" id="s1">
                                     <ul>
                                         <li data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on bottom"><a data-page="projecto1" href="#projecto1"
-                                                class="botaoPage"><i class='bx bxl-python'></i>
+                                            data-bs-title="Tripleten > 2023/Aug"><a data-page="projecto1"
+                                                href="#projecto1" class="botaoPage"><i class='bx bxl-python'></i>
                                                 <span>Project 1</span></a></li>
                                         <li data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on bottom"><a data-page="projecto2" href="#projecto2"
-                                                class="botaoPage"><i class='bx bxl-python'></i>
+                                            data-bs-title="Tripleten > 2023/Sep"><a data-page="projecto2"
+                                                href="#projecto2" class="botaoPage"><i class='bx bxl-python'></i>
                                                 <span>Project 2</span></a>
                                         </li>
                                         <li data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on bottom"><a data-page="projecto3" href="#projecto3"
-                                                class="botaoPage"><i class='bx bxl-python'></i>
+                                            data-bs-title="Tripleten > 2023/Oct"><a data-page="projecto3"
+                                                href="#projecto3" class="botaoPage"><i class='bx bxl-python'></i>
                                                 <span>Project 3</span></a>
                                         </li>
                                         <li data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tooltip on bottom"><a data-page="projecto4" href="#projecto4"
-                                                class="botaoPage"><i class='bx bxl-python'></i>
+                                            data-bs-title="Tripleten > 2023/Nov"><a data-page="projecto4"
+                                                href="#projecto4" class="botaoPage"><i class='bx bxl-python'></i>
                                                 <span>Project 4</span></a>
                                         </li>
                                     </ul>
@@ -179,29 +182,42 @@
                                 <a class="" data-bs-toggle="collapse" href="#s2" role="button" aria-expanded="true"
                                     aria-controls="s2">
                                     <i class="bi bi-person-bounding-box"></i>
-                                    <span>Personal Info.</span>
+                                    <span>Info.</span>
                                 </a>
                                 <div class="collapse multi-collapse show" id="s2">
                                     <ul>
+                                        <li>
+                                            <a href="#skills" data-page="skills" class="botaoPage">
+                                                <i class='bx bx-phone'></i>
+                                                <span>skill.py</span></a>
+                                        </li>
                                         <li data-bs-toggle="tooltip" data-bs-placement="left"
                                             data-bs-title="Contacts & Links">
                                             <a href="#contact" data-page="contact" class="botaoPage">
                                                 <i class='bx bx-phone'></i>
-                                                <span>contact</span></a>
+                                                <span>contact.js</span></a>
                                         </li>
-                                        <li data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="To Do">
+                                        <li>
                                             <a href="#goals" data-page="goals" class="botaoPage">
                                                 <i class="bi bi-check2-square"></i>
-                                                <span>goals</span></a>
+                                                <span>goals.java</span></a>
                                         </li>
-                                        <li data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        <li data-bs-toggle="tooltip" data-bs-placement="left"
                                             data-bs-title="Free Time Activities">
                                             <a href="#hobbies" data-page="hobbies" class="botaoPage">
                                                 <i class="bi bi-controller"></i>
-                                                <span>hobbies</span></a>
+                                                <span>hobbies.sql</span></a>
                                         </li>
+
                                     </ul>
                                 </div>
+                            </li>
+                            <hr style="width: 95%;" />
+
+                            <li data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Thank you :)">
+                                <a href="#hobbies" data-page="resume.pdf" class="">
+                                    <i class="bi bi-filetype-pdf" style="color: gold; font-size: 22px;"></i>
+                                    <span>resume.pdf</span></a>
                             </li>
 
                         </ul>
@@ -213,7 +229,8 @@
             <div class="col-9 main-content" ">
                 <div class=" row" id="rowpages">
                 <ul id="main-contentpages">
-                    <li><a href="#">app.py <i class="bi bi-x"></i></a></li>
+                    <li><a href="#" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="Just for show :)">app.py <i class="bi bi-x"></i></a></li>
                     <li><a href="#" class="active"><span id="pageopenname">index.gb </span><i class="bi bi-x"></i> </a>
                     </li>
                 </ul>
