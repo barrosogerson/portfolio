@@ -74,6 +74,16 @@
                 });
             });
 
+            // Toogle the active class on the sidebar icons
+            const sidebarIcons = document.querySelectorAll('.sidebar-icons a');
+            sidebarIcons.forEach(icon => {
+                icon.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    sidebarIcons.forEach(icon => icon.classList.remove('active'));
+                    this.classList.toggle('active');
+                });
+            });
+
             // Check if there's a #page in the URL
             const hash = window.location.hash.substring(1);
             if (hash) {

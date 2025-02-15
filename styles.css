@@ -117,19 +117,27 @@ i.max:hover {
 .sidebar-icons {
     color: #d4d4d4;
     font-size: 30px;
-    margin: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 0px;
+    padding: 0 0 0 1px;
 }
 
 .sidebar-icons a {
-    display: inline-block;
+    display: block;
     text-decoration: none;
     color: #828282;
-    margin-bottom: 20px;
+    margin: 10px 0 20px 0;
+    padding-left: 10px;
+    width: 100%;
+
 }
 
 .sidebar-icons a.active,
 .sidebar-icons a:hover {
     color: #d4d4d4;
+}
+
+.sidebar-icons a.active {
+    border-left: 2px solid #d4d4d4;
 }
 
 
