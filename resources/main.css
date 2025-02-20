@@ -2,6 +2,10 @@
     font-family: "JetBrains Mono", monospace;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Gradient background */
 body {
     background: linear-gradient(162deg, rgba(2, 0, 36, 1) 0%, rgba(9, 102, 121, 1) 35%, rgba(0, 255, 218, 1) 100%);
@@ -255,6 +259,30 @@ ul#main-contentpages li a.active {
 
 }
 
+/* Width and height
+::-webkit-scrollbar {
+    width: 18px;
+    height: 18px;
+}
+*/
+/* Track (the area behind the thumb)
+::-webkit-scrollbar-track {
+    background: #2c2c2c;
+    border-radius: 10px;
+}*/
+
+/* Scrollbar handle (thumb)
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+}*/
+
+/* Thumb on hover
+::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}*/
+
+
 #rowopenpage {
     background-color: #222;
     padding: 20px;
@@ -263,5 +291,16 @@ ul#main-contentpages li a.active {
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    overflow: scroll;
+    overflow-y: scroll;
+
+    scrollbar-color: #555 #2c2c2c;
+    /*
+    scrollbar-width: thin;
+    scrollbar-width: none;
+    Firefox
+    scroll-snap-type: y mandatory;*/
+}
+
+#rowopenpage::-webkit-scrollbar {
+    /* Webkit (Chrome, Safari, Edge) */
 }
