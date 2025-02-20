@@ -156,6 +156,18 @@
                 }
             }
 
+
+            // Handle the resume link click
+            const resumeLink = document.querySelector('a[data-page="resume.pdf"]');
+            if (resumeLink) {
+                resumeLink.addEventListener('click', function (event) {
+                    event.preventDefault();
+
+                    //window.open(this.getAttribute('data-page'), '_blank');
+                    window.open("https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf", '_blank');
+                });
+            }
+
         });
 
     </script>
@@ -297,7 +309,7 @@
                             <hr style="width: 95%;" />
 
                             <li data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Thank you :)">
-                                <a href="#hobbies" data-page="resume.pdf" class="">
+                                <a href="#resume" data-page="resume.pdf" class="">
                                     <i class="bi bi-filetype-pdf" style="color: gold; font-size: 22px;"></i>
                                     <span>resume.pdf</span></a>
                             </li>
@@ -308,48 +320,49 @@
                 </div>
 
             </div>
-            <div class="col-9 main-content" ">
+            <div class="col-9 main-content">
                 <div class=" row" id="rowpages">
-                <ul id="main-contentpages">
-                    <li><a href="#" data-bs-toggle="tooltip" data-bs-placement="top"
-                            data-bs-title="Just for show :)">app.py <i class="bi bi-x"></i></a></li>
-                    <li><a href="#" class="active"><span id="pageopenname">index.gb </span><i class="bi bi-x"></i> </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="row" id="rowopenpage">
-                <div class=" col-12">
-                    <p>Lorem ipsum dolor sit consectetur adipisicing elit. Natus ad et molestiae voluptatibus!
-                        Alias, expedita consectetur sed veniam, beatae illo vel libero accusamus cupiditate cum
-                        dolores soluta quo possimus ut!</p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, amet dolor. Perferendis
-                    architecto odit assumenda nisi. Recusandae blanditiis deserunt molestias corrupti iste nostrum,
-                    tempora pariatur? Beatae reprehenderit assumenda officia dolorum!
-                    Similique officia molestiae veniam ad! Soluta esse officiis dolorum dolore ab excepturi quasi
-                    cupiditate totam? Ea earum dolorem doloribus tempore dolore! Velit hic, doloremque
-                    exercitationem voluptas animi explicabo nobis voluptatum?
-                    Neque ducimus suscipit, quibusdam doloribus voluptas rem totam obcaecati officia earum soluta
-                    exercitationem inventore iusto mollitia quae corporis tempore accusamus maiores quisquam labore
-                    consequatur corrupti. Molestias perferendis autem sint itaque.
-                    Beatae quas tempora voluptates, iure cum similique, excepturi dicta totam alias delectus maxime
-                    voluptas quasi quisquam laboriosam aut porro hic inventore in sint molestias laudantium illo!
-                    Dignissimos nisi temporibus impedit.
-                    Consequatur, molestiae exercitationem ea error possimus blanditiis adipisci aspernatur debitis
-                    esse nemo, sit neque nisi. Ex quos repellat laborum praesentium, vitae reiciendis quisquam,
-                    illum aliquam quis porro fuga, obcaecati aperiam?
-                    Corporis, sunt? Eaque, ipsum. Eius inventore expedita quasi fuga non, fugiat consectetur
-                    officiis laudantium vel ea, assumenda ipsam a molestiae commodi illo! Assumenda fugiat
-                    voluptatum ad cumque eum est aliquam.
-                    Aliquam dolorem suscipit provident cumque officia, repellat itaque perferendis corporis placeat
-                    tenetur aspernatur. Laboriosam aspernatur, unde quasi at tempore eligendi et inventore obcaecati
-                    labore harum nesciunt incidunt, nobis veritatis! Dolorum?
-                    Doloremque enim autem suscipit ad tenetur, quos ab dicta debitis atque vero, distinctio facere
-                    fuga id incidunt praesentium recusandae aut quidem ipsam. Alias sunt voluptate maxime id
-                    recusandae deserunt fugiat.
+                    <ul id="main-contentpages">
+                        <li><a href="#" data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-title="Just for show :)">app.py <i class="bi bi-x"></i></a></li>
+                        <li><a href="#" class="active"><span id="pageopenname">index.gb </span><i class="bi bi-x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="rowopenpage">
+                    <div class=" col-12">
+                        <p>Lorem ipsum dolor sit consectetur adipisicing elit. Natus ad et molestiae voluptatibus!
+                            Alias, expedita consectetur sed veniam, beatae illo vel libero accusamus cupiditate cum
+                            dolores soluta quo possimus ut!</p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, amet dolor. Perferendis
+                        architecto odit assumenda nisi. Recusandae blanditiis deserunt molestias corrupti iste nostrum,
+                        tempora pariatur? Beatae reprehenderit assumenda officia dolorum!
+                        Similique officia molestiae veniam ad! Soluta esse officiis dolorum dolore ab excepturi quasi
+                        cupiditate totam? Ea earum dolorem doloribus tempore dolore! Velit hic, doloremque
+                        exercitationem voluptas animi explicabo nobis voluptatum?
+                        Neque ducimus suscipit, quibusdam doloribus voluptas rem totam obcaecati officia earum soluta
+                        exercitationem inventore iusto mollitia quae corporis tempore accusamus maiores quisquam labore
+                        consequatur corrupti. Molestias perferendis autem sint itaque.
+                        Beatae quas tempora voluptates, iure cum similique, excepturi dicta totam alias delectus maxime
+                        voluptas quasi quisquam laboriosam aut porro hic inventore in sint molestias laudantium illo!
+                        Dignissimos nisi temporibus impedit.
+                        Consequatur, molestiae exercitationem ea error possimus blanditiis adipisci aspernatur debitis
+                        esse nemo, sit neque nisi. Ex quos repellat laborum praesentium, vitae reiciendis quisquam,
+                        illum aliquam quis porro fuga, obcaecati aperiam?
+                        Corporis, sunt? Eaque, ipsum. Eius inventore expedita quasi fuga non, fugiat consectetur
+                        officiis laudantium vel ea, assumenda ipsam a molestiae commodi illo! Assumenda fugiat
+                        voluptatum ad cumque eum est aliquam.
+                        Aliquam dolorem suscipit provident cumque officia, repellat itaque perferendis corporis placeat
+                        tenetur aspernatur. Laboriosam aspernatur, unde quasi at tempore eligendi et inventore obcaecati
+                        labore harum nesciunt incidunt, nobis veritatis! Dolorum?
+                        Doloremque enim autem suscipit ad tenetur, quos ab dicta debitis atque vero, distinctio facere
+                        fuga id incidunt praesentium recusandae aut quidem ipsam. Alias sunt voluptate maxime id
+                        recusandae deserunt fugiat.
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </body>
 
