@@ -92,6 +92,14 @@
         });
 
         document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById("backDropMenu").addEventListener("click", function () {
+                let sidebarMenu = document.getElementById("sidebarMenu");
+                let bsCollapse = new bootstrap.Collapse(sidebarMenu, { toggle: false });
+                bsCollapse.hide();
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
             const btnPage = document.querySelectorAll('[class="botaoPage"]');
 
             btnPage.forEach(button => {
@@ -172,12 +180,26 @@
 
     </script>
 
+    <button id="btShowMenu" class="btn btn-primary d-sm-block d-md-none" type="button" data-bs-toggle="collapse"
+        data-bs-target="#sidebarMenu" aria-expanded="false" aria-controls="sidebarMenu">
+        ☰
+    </button>
+
+
+
     <!-- <div class="container text-center"> -->
-    <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="container ">
 
         <div class="row mainrow">
-            <div class="col-3 sidebar-menus">
-                <div class="row">
+            <!-- Toggle Button for Small Screens -->
+
+            <!-- Sidebar Menu (Make it Collapsible) -->
+            <div class="col-md-3 col-lg-3 col-sm-3 col-3 sidebar-menus collapse d-md-block" id="sidebarMenu">
+                <div id="backDropMenu" class="d-md-none">
+
+                </div>
+
+                <div class="row d-none d-lg-block">
                     <div class="col-12">
                         <div class="row">
                             <div class="col-9" id="winbuttons">
@@ -189,15 +211,15 @@
                                     class="bi bi-circle-fill max"></i>
                                 <span class="text-center">EXPLORER</span>
                             </div>
-                            <div class="col-2 div3dots">
+                            <div class="col-2 div3dots d-none d-lg-block">
                                 <span class="text-right treedots">...</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
 
-                    <div class="col-2 sidebar-icons">
+                <div class="row">
+                    <div class="col-2 sidebar-icons d-none d-lg-block">
                         <a href="#" class="active" data-bs-toggle="tooltip" data-bs-placement="right"
                             data-bs-title="Home">
                             <i class="bi bi-file-earmark-richtext"></i>
@@ -217,14 +239,12 @@
                         <a href="#" class="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Home">
                             <i class="bi bi-pc-display-horizontal"></i>
                         </a>
-
                     </div>
-                    <div class="col-9" id="sidebar-menu">
+                    <div class="col-lg-9" id="sidebar-menu">
                         <br />
                         <a href="index.html" id="mainLink"> <span> > GERSON BARROSO</span> </a>
                         <hr style="width: 95%;" />
                         <ul>
-
                             <li>
                                 <a class="" data-bs-toggle="collapse" href="#s1" role="button" aria-expanded="false"
                                     aria-controls="s1">
@@ -265,12 +285,6 @@
                                 </div>
 
                             </li>
-                            <!--
-                            <li data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tooltip on bottom">
-                                <a href="#" class=""><i class='bx bxl-postgresql'></i><span>database</span></a>
-                            </li>
-                            -->
-
                             <li>
 
                                 <a class="" data-bs-toggle="collapse" href="#s2" role="button" aria-expanded="true"
@@ -314,17 +328,15 @@
                                     <i class="bi bi-filetype-pdf" style="color: gold; font-size: 22px;"></i>
                                     <span>resume.pdf</span></a>
                             </li>
-
                         </ul>
                     </div>
-
                 </div>
-
             </div>
-            <div class="col-9 main-content">
+
+            <div class="col-lg-9 col-md-9 col-12 main-content">
                 <div class=" row" id="rowpages">
                     <ul id="main-contentpages">
-                        <li><a href="#" data-bs-toggle="tooltip" data-bs-placement="top"
+                        <li><a href="#" data-bs-toggle="tooltip" data-bs-placement="top" class="d-none d-lg-block"
                                 data-bs-title="Just for show :)">app.py <i class="bi bi-x"></i></a></li>
                         <li><a href="#" class="active"><span id="pageopenname">index.gb </span><i class="bi bi-x"></i>
                             </a>

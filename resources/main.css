@@ -73,13 +73,11 @@ div {
 }
 
 .mainrow {
-    display: flex;
     align-items: center;
     height: 100%;
     border-radius: 10px !important;
     background-color: rgba(0, 0, 0, 0.2);
     padding-right: 5px;
-
 }
 
 .main-content {
@@ -195,10 +193,8 @@ i.max:hover {
     font-size: 14px;
 }
 
-#sidebar-menu li a:hover,
-{
-color: #fff;
-
+#sidebar-menu li a:hover {
+    color: #fff;
 }
 
 #sidebar-menu li a.active {
@@ -303,4 +299,100 @@ ul#main-contentpages li a.active {
 
 #rowopenpage::-webkit-scrollbar {
     /* Webkit (Chrome, Safari, Edge) */
+}
+
+#btShowMenu {
+    border: 0px;
+    border-radius: 0;
+    font-size: 1.5rem;
+    color: #d4d4d4;
+    background-color: transparent;
+
+}
+
+#btShowMenu:active {
+    border: 0px;
+    border-radius: 0;
+    font-size: 1.5rem;
+    color: #d4d4d4;
+    background-color: #222;
+
+}
+
+#backDropMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Add your styles for devices with a max width of 768px here */
+
+    #backDropMenu {
+        position: fixed;
+        top: -10%;
+        left: -10%;
+        width: 150vw;
+        height: 150vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+
+    #btShowMenu {}
+
+    .container {
+        height: 93vh !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 2% 0 1% 1% !important;
+        top: 0 !important;
+        position: fixed !important;
+        border: 0px;
+    }
+
+    .mainrow {
+        margin: 5px;
+        width: 100vw !important;
+        background-color: transparent;
+    }
+
+    .sidebar-menus {
+        border-radius: 0;
+    }
+
+    #sidebarMenu {
+        position: fixed !important;
+        top: 0;
+        left: 10%;
+        background-color: black;
+        height: auto;
+        width: 70%;
+        border-radius: 0;
+        z-index: 0;
+    }
+
+    .main-content {
+        height: 90vh;
+        padding: 0;
+    }
+
+    #rowopenpage {
+        margin: 10px 10px 0 0px;
+        padding: 0 0 0 10px;
+    }
+
+    ul#main-contentpages li a.active {
+        padding: 10px;
+        background-color: #222;
+    }
+
+    #main-contentpages {
+        margin-left: 10px;
+    }
 }
