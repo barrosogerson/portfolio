@@ -307,6 +307,9 @@ ul#main-contentpages li a.active {
     font-size: 1.5rem;
     color: #d4d4d4;
     background-color: transparent;
+    position: fixed;
+    top: 5px;
+    left: 5px;
 
 }
 
@@ -316,6 +319,7 @@ ul#main-contentpages li a.active {
     font-size: 1.5rem;
     color: #d4d4d4;
     background-color: #222;
+
 
 }
 
@@ -332,6 +336,9 @@ ul#main-contentpages li a.active {
 
 @media screen and (max-width: 768px) {
 
+    body {
+        overflow-y: hidden;
+    }
 
     /* Add your styles for devices with a max width of 768px here */
 
@@ -344,8 +351,6 @@ ul#main-contentpages li a.active {
         background-color: rgba(0, 0, 0, 0.5);
         z-index: -1;
     }
-
-    #btShowMenu {}
 
     .container {
         height: 93vh !important;
@@ -386,6 +391,7 @@ ul#main-contentpages li a.active {
     #rowopenpage {
         margin: 10px 10px 0 0px;
         padding: 0 0 0 10px;
+        height: 80vh;
     }
 
     ul#main-contentpages li a.active {
