@@ -330,13 +330,79 @@ ul#main-contentpages li a.active {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
+    z-index: 1;
     cursor: pointer;
+    display: none;
 }
 
 #popup-image {
     display: none;
 }
+
+#mainTitle,
+#mainTitle2 {
+    display: inline-block;
+    font-weight: normal;
+    margin: 20px 0;
+}
+
+#forItems {
+    display: inline-block;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#forItems li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+#forItems li a:hover {
+    background-color: #222;
+    color: #fff;
+    cursor: pointer;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #fff;
+}
+
+#forItems li a {
+    text-decoration: none;
+    color: #d4d4d4;
+    padding: 5px 0 5px 10px;
+    display: inline-block;
+    width: 100%;
+}
+
+a.forAbout.active {
+    background-color: #222;
+    color: #fff;
+    cursor: pointer;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #fff;
+}
+
+
+#mainTitle2 {
+    color: white;
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
+
+#rowopenpage #titulo {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    display: inline-block;
+    padding: 10px;
+
+}
+
 
 @media screen and (max-width: 768px) {
 
@@ -348,12 +414,12 @@ ul#main-contentpages li a.active {
 
     #backDropMenu {
         position: fixed;
-        top: -10%;
-        left: -10%;
-        width: 150vw;
-        height: 150vh;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
         background-color: rgba(0, 0, 0, 0.5);
-        z-index: -1;
+        z-index: 1;
     }
 
     .container {
@@ -384,7 +450,7 @@ ul#main-contentpages li a.active {
         height: auto;
         width: 70%;
         border-radius: 0;
-        z-index: 0;
+        z-index: 233;
     }
 
     .main-content {

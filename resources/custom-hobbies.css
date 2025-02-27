@@ -1,6 +1,18 @@
-#titlee {
-    color: orange;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
+#hobbies ul {
+    text-align: center;
+}
+
+#hobbies ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 3rem;
+    width: 6rem;
+    height: 6rem;
+
+    border-radius: 20% 50%;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
 }

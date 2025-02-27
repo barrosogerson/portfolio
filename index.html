@@ -91,13 +91,51 @@
             const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
         });
 
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById("btShowMenu").addEventListener("click", function () {
+                //document.getElementById("backDropMenu").style.display = "block";
+                let sidebarMenu = document.getElementById("sidebarMenu");
+            });
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
             document.getElementById("backDropMenu").addEventListener("click", function () {
                 let sidebarMenu = document.getElementById("sidebarMenu");
                 let bsCollapse = new bootstrap.Collapse(sidebarMenu, { toggle: false });
                 bsCollapse.hide();
+                document.getElementById("backDropMenu").style.display = "none";
             });
         });
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const linkForAbout = document.querySelectorAll('[class="forAbout"]');
+            linkForAbout.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+
+                    // Remove the active class from all buttons
+                    linkForAbout.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+
+                    // hide all others collapse
+                    const collapseAbout = document.querySelectorAll('.multi-collapseAboutMe');
+                    collapseAbout.forEach(collapse => {
+                        const bsCollapse = new bootstrap.Collapse(collapse, { toggle: false });
+                        bsCollapse.hide();
+                    });
+
+                    const id = this.getAttribute('href');
+                    const collapse = document.querySelector(id);
+                    const bsCollapse = new bootstrap.Collapse(collapse, { toggle: false });
+                    bsCollapse.toggle();
+                });
+            });
+
+        });
+
+
 
         document.addEventListener('DOMContentLoaded', function () {
             const btnPage = document.querySelectorAll('[class="botaoPage"]');
@@ -217,9 +255,7 @@
 
             <!-- Sidebar Menu (Make it Collapsible) -->
             <div class="col-md-3 col-lg-3 col-sm-3 col-3 sidebar-menus collapse d-md-block" id="sidebarMenu">
-                <div id="backDropMenu" class="d-md-none">
 
-                </div>
 
                 <div class="row d-none d-lg-block">
                     <div class="col-12">
@@ -246,19 +282,20 @@
                             data-bs-title="Home">
                             <i class="bi bi-file-earmark-richtext"></i>
                         </a>
-                        <a href="#" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Home">
+                        <a href="#" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Search">
                             <i class="bi bi-search"></i>
                         </a>
-                        <a href="#" class="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Home">
+                        <a href="#" class="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Fork">
                             <i class="fa fa-code-fork" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Home">
+                        <a href="#" class="" data-bs-toggle="tooltip" data-bs-placement="right"
+                            data-bs-title="Extensions">
                             <i class='bx bx-extension'></i>
                         </a>
-                        <a href="#" class="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Home">
+                        <a href="#" class="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Git">
                             <i class="bi bi-git"></i>
                         </a>
-                        <a href="#" class="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Home">
+                        <a href="#" class="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Remote">
                             <i class="bi bi-pc-display-horizontal"></i>
                         </a>
                     </div>
@@ -308,55 +345,41 @@
                                     aria-controls="s1">
                                     <i class="bi bi-clipboard-data"></i>
                                     <span>data analysis</span>
+                                    <p style="font-size: 13px; margin-left: 10px;">--- @TripleTen Studies ---</p>
                                 </a>
                                 <div class="collapse multi-collapse " id="s1">
+
                                     <ul>
-                                        <li data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tripleten > 2022/Nov">
+                                        <li data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="2022/Nov">
                                             <a data-page="projecto3" data-style="projecto" href="#projecto3"
                                                 class="botaoPage">
                                                 <i class='bx bxl-python'></i>
                                                 <span>Project 3</span>
                                             </a>
                                         </li>
-                                        <li data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tripleten > 2022/Dec">
+                                        <li data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="2022/Dec">
                                             <a data-page="projecto4" data-style="projecto" href="#projecto4"
                                                 class="botaoPage">
                                                 <i class='bx bxl-python'></i>
                                                 <span>Project 4</span>
                                             </a>
                                         </li>
-                                        <li data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tripleten > 2023/Jan"><a data-page="projecto5"
-                                                data-style="projecto" href="#projecto5" class="botaoPage"><i
-                                                    class='bx bxl-python'></i>
+                                        <li data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="2023/Jan">
+                                            <a data-page="projecto5" data-style="projecto" href="#projecto5"
+                                                class="botaoPage"><i class='bx bxl-python'></i>
                                                 <span>Project 5</span></a>
                                         </li>
-                                        <li data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tripleten > 2023/Feb"><a data-page="projecto6"
-                                                data-style="projecto" href="#projecto6" class="botaoPage"><i
-                                                    class='bx bxl-python'></i>
+                                        <li data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="2023/Feb">
+                                            <a data-page="projecto6" data-style="projecto" href="#projecto6"
+                                                class="botaoPage"><i class='bx bxl-python'></i>
                                                 <span>Project 6</span></a>
                                         </li>
-                                        <li data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tripleten > 2023/Feb"><a data-page="projecto7"
-                                                data-style="projecto" href="#projecto7" class="botaoPage"><i
-                                                    class='bx bxl-python'></i>
+                                        <li data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="2023/Feb">
+                                            <a data-page="projecto7" data-style="projecto" href="#projecto7"
+                                                class="botaoPage"><i class='bx bxl-python'></i>
                                                 <span>Project 7</span></a>
                                         </li>
-                                        <li data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tripleten > 2023/Feb"><a data-page="projecto8"
-                                                data-style="projecto" href="#projecto8" class="botaoPage"><i
-                                                    class='bx bxl-python'></i>
-                                                <span>Project 8</span></a>
-                                        </li>
-                                        <li data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tripleten > 2023/Feb"><a data-page="projecto9"
-                                                data-style="projecto" href="#projecto9" class="botaoPage"><i
-                                                    class='bx bxl-python'></i>
-                                                <span>Project 9</span></a>
-                                        </li>
+
                                     </ul>
                                 </div>
 
@@ -386,80 +409,190 @@
                 </div>
                 <div class="row" id="rowopenpage">
                     <div class=" col-12">
-                        <p>Lorem ipsum doloR sit consectetur adipisicing elit. Natus ad et molestiae voluptatibus!
-                            Alias, expedita consectetur sed veniam, beatae illo vel libero accusamus cupiditate cum
-                            dolores soluta quo possimus ut!</p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, amet dolor. Perferendis
-                        architecto odit assumenda nisi. Recusandae blanditiis deserunt molestias corrupti iste nostrum,
-                        tempora pariatur? Beatae reprehenderit assumenda officia dolorum!
-                        Similique officia molestiae veniam ad! Soluta esse officiis dolorum dolore ab excepturi quasi
-                        cupiditate totam? Ea earum dolorem doloribus tempore dolore! Velit hic, doloremque
-                        exercitationem voluptas animi explicabo nobis voluptatum?
-                        Neque ducimus suscipit, quibusdam doloribus voluptas rem totam obcaecati officia earum soluta
-                        exercitationem inventore iusto mollitia quae corporis tempore accusamus maiores quisquam labore
-                        consequatur corrupti. Molestias perferendis autem sint itaque.
-                        Beatae quas tempora voluptates, iure cum similique, excepturi dicta totam alias delectus maxime
-                        voluptas quasi quisquam laboriosam aut porro hic inventore in sint molestias laudantium illo!
-                        Dignissimos nisi temporibus impedit.
-                        Consequatur, molestiae exercitationem ea error possimus blanditiis adipisci aspernatur debitis
-                        esse nemo, sit neque nisi. Ex quos repellat laborum praesentium, vitae reiciendis quisquam,
-                        illum aliquam quis porro fuga, obcaecati aperiam?
-                        Corporis, sunt? Eaque, ipsum. Eius inventore expedita quasi fuga non, fugiat consectetur
-                        officiis laudantium vel ea, assumenda ipsam a molestiae commodi illo! Assumenda fugiat
-                        voluptatum ad cumque eum est aliquam.
-                        Aliquam dolorem suscipit provident cumque officia, repellat itaque perferendis corporis placeat
-                        tenetur aspernatur. Laboriosam aspernatur, unde quasi at tempore eligendi et inventore obcaecati
-                        labore harum nesciunt incidunt, nobis veritatis! Dolorum?
-                        Doloremque enim autem suscipit ad tenetur, quos ab dicta debitis atque vero, distinctio facere
-                        fuga id incidunt praesentium recusandae aut quidem ipsam. Alias sunt voluptate maxime id
-                        recusandae deserunt fugiat.
+                        <h3>Hello, I'm</h3>
+                        <h1 id="mainTitle">
+                            Gerson
+                        </h1>
+                        <h1 id="mainTitle2">
+                            Barroso
+                        </h1>
+                        <p>
+                            I'm an IT Support and Automation Specialist with a strong background in technical support,
+                            automation, and data analysis. With a degree in Computer Engineering, I have experience
+                            solving complex issues, optimizing workflows, and extracting insights from data to support
+                            decision-making.
+                        </p>
+                        <p>
+                            Currently, I'm expanding my expertise in data analysis and visualization, with the goal of
+                            transitioning into a full-time
+                            <span style="color: black; background: white; padding: 0;">data analyst</span> role. I
+                            thrive
+                            on problem-solving, continuous
+                            learning, and turning data into meaningful insights.
+                        </p>
+                        <p></p>
+                        Click <i class='bx bx-wink-smile'></i>
+                        <i class='bx bxs-hand-right'></i>
+
+                        <ul id="forItems">
+                            <li>
+                                <a class="forAbout" data-bs-toggle="collapse" href="#gbForDA" role="button"
+                                    aria-expanded="true" aria-controls="gbForDA">
+                                    For Data Analysts,
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="forAbout" data-bs-toggle="collapse" href="#gbForProgrammers" role="button"
+                                    aria-expanded="false" aria-controls="gbForProg">
+                                    For Programmers,
+                                </a>
+                            </li>
+                            <li>
+                                <a class="forAbout" data-bs-toggle="collapse" href="#gbArtits" role="button"
+                                    aria-expanded="false" aria-controls="gbForArt">
+                                    For Artists,
+                                </a>
+                            </li>
+                            <li>
+                                <a class="forAbout" data-bs-toggle="collapse" href="#gbForEng" role="button"
+                                    aria-expanded="false" aria-controls="gbForEng">
+                                    For Engineers
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="row collapse multi-collapseAboutMe show" id="gbForDA">
+                            <p style="background-color: white; color: #222; padding: 10px;">
+                                > <span style="color:red; font-weight: bold;">SELECT</span>
+                                <span style="font-style: italic;">c</span>.quote
+                                <span style="color:red; font-weight: bold;">FROM</span> creativity
+                                <span style="color:green; font-weight: bold;">AS</span>
+                                <span style="font-style: italic;">c</span>
+                                <span style="color:blue; font-weight: bold;">LIMIT </span> 2;
+                            </p>
+                            <p style="color: #bbb; font-style: italic;">
+                                <i class="fa fa-quote-left" style="font-size: 2rem;" aria-hidden="true"></i>
+                                Without
+                                data,
+                                you're just another person
+                                with an opinion. <i class="fa fa-quote-right" aria-hidden="true"></i> — W. Edwards
+                                Deming
+                            </p>
+
+                            <p style="color: #bbb; font-style: italic;">
+                                <i class="fa fa-quote-left" style="font-size: 2rem;" aria-hidden="true"></i>
+                                Data is the new oil. Like oil, it’s valuable, but if unrefined, it cannot really be
+                                used. <i class="fa fa-quote-right" aria-hidden="true"></i> — Clive Humby
+                                Deming
+                            </p>
+
+                        </div>
+
+
+                        <div class="row collapse multi-collapseAboutMe" id="gbForEng">
+                            <p style="color:white">
+
+                                22 50 72 65 63 69 73 69 6F 6E 2C 20 69 6E 6E 6F 76 61 74 69 6F 6E 2C 20 61 6E 64 20 70
+                                72 6F 62 6C 65 6D 2D 73 6F 6C 76 69 6E 67 2014 74 68 72 65 65 20 74 68 69 6E 67 73 20 74
+                                68 61 74 20 64 65 66 69 6E 65 20 67 72 65 61 74 20 65 6E 67 69 6E 65 65 72 73 2E 20 4B
+                                65 65 70 20 62 75 69 6C 64 69 6E 67 20 74 68 65 20 66 75 74 75 72 65 2C 20 6F 6E 65 20
+                                73 6F 6C 75 74 69 6F 6E 20 61 74 20 61 20 74 69 6D 65 21 22
+                            </p>
+
+                            <p style="background-color: #bbb; color: #222; padding: 10px;"> HEX to STRING
+                            </p>
+
+                        </div>
+
+                        <div class="row collapse multi-collapseAboutMe" id="gbForProgrammers">
+                            <pre style="background-color: #bbb; color: #222; padding: 5px; text-align: left;">
+                            * Main.java
+
+                                StringBuffer quote = Utils.getRandomQuote();
+
+                                public class Main {
+                                    public static void main(String[] args) {
+                                        System.out.println(quote);
+                                    }
+                                }
+                            </pre>
+
+                            <p>
+                                <i class="fa fa-quote-left" style="font-size: 2rem;" aria-hidden="true"></i>
+                                Every great application starts with a simple line of code. Keep building!
+                                <i class="fa fa-quote-right" aria-hidden="true"></i> — Unknown Author
+                            </p>
+                        </div>
+
+                        <div class="row collapse multi-collapseAboutMe" id="gbArtits">
+                            <p>
+
+
+                                <i class="fa fa-quote-left" style="font-size: 2rem;" aria-hidden="true"></i>
+                                Life isn’t just <span style="color: black; background-color: white; padding: 5px;">
+                                    #000000</span> and <span
+                                    style="color: white; background-color: black; padding: 5px;">#FFFFFF</span> —keep
+                                painting outside the lines and making
+                                the world
+                                more
+                                <span style="color:blue">c</span>
+                                <span style="color:cyan">o</span>
+                                <span style="color:lightblue">l</span>
+                                <span style="color:blueviolet">o</span>
+                                <span style="color:white">r</span>
+                                <span style="color:white">f</span>
+                                <span style="color:white">u</span>
+                                <span style="color:white">l</span>
+                                <span style="color:cyan">!</span>
+
+                                <i class="fa fa-quote-right" aria-hidden="true"></i>
+
+                            </p>
+
+                        </div>
+
+
                     </div>
                 </div>
-
-                <script>
-                    /*
-                    document.addEventListener('DOMContentLoaded', function () {
-
-                        const url = 'projecto3.html';
-                        console.log(url);
-                        // You can add additional logic here to handle the URL
-                        fetch(url)
-                            .then(response => response.text())
-                            .then(data => {
-                                const cssFileName = 'resources/custom-projecto.css';
-                                const linkElement = document.createElement('link');
-                                linkElement.rel = 'stylesheet';
-                                linkElement.href = cssFileName;
-                                document.head.appendChild(linkElement);
-                                // Load the content into the div with id rowopenpage
-                                document.getElementById('rowopenpage').innerHTML = data;
-
-
-
-                                document.querySelectorAll('.img-gallery img').forEach(image => {
-                                    console.log(image);
-                                    image.addEventListener('click', () => {
-                                        const popup = document.querySelector('.popup-image');
-                                        popup.style.display = 'block';
-                                        popup.querySelector('img').src = image.src;
-                                    });
-                                });
-
-                                document.querySelector('.popup-image span')?.addEventListener('click', () => {
-                                    document.querySelector('.popup-image').style.display = 'none';
-                                });
-                            });
-
-                    });
-                    */
-
-                </script>
-
 
             </div>
         </div>
     </div>
 
+    <script>
+        /*
+                document.addEventListener('DOMContentLoaded', function () {
+
+                    const url = 'hobbies.html';
+                    console.log(url);
+                    // You can add additional logic here to handle the URL
+                    fetch(url)
+                        .then(response => response.text())
+                        .then(data => {
+                            const cssFileName = 'resources/custom-hobbies.css';
+                            const linkElement = document.createElement('link');
+                            linkElement.rel = 'stylesheet';
+                            linkElement.href = cssFileName;
+                            document.head.appendChild(linkElement);
+                            // Load the content into the div with id rowopenpage
+                            document.getElementById('rowopenpage').innerHTML = data;
+
+                        });
+
+                });
+                */
+
+    </script>
+
+
+
+    </div>
+    </div>
+    </div>
+    <div id="backDropMenu" class="d-md-none">
+
+    </div>
     <div id="popup-image" class="popup-image">
         <span>&times;</span>
         <img src="resources/images/p1_0.png" />

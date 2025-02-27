@@ -1,14 +1,3 @@
-#rowopenpage #titulo {
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    border: 1px solid gray;
-    display: inline-block;
-    padding: 10px;
-
-}
-
 #rowopenpage h2 {
     font-size: 1.4rem;
 }
@@ -87,6 +76,7 @@
     font-weight: bold;
     border-radius: 50%;
     border: 1px solid white;
+    margin: 15px 10px;
 
     padding: 1px 15px;
     color: white;
@@ -107,6 +97,16 @@
     border-radius: 5px;
     width: 750px;
     object-fit: cover;
+}
+
+#projectDescription {
+    font-style: italic;
+    color: white;
+}
+
+#projectKeyLearnings li {
+    list-style: circle;
+    margin-bottom: 10px;
 }
 
 @media (max-width:768px) {
