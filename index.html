@@ -140,6 +140,27 @@
                             btnPage.forEach(button => button.classList.remove('active'));
 
                             button.classList.add('active');
+
+
+
+                            document.querySelectorAll('.img-gallery img').forEach(image => {
+                                console.log(image);
+                                image.addEventListener('click', () => {
+                                    const popup = document.querySelector('#popup-image');
+                                    popup.style.display = 'block';
+                                    popup.querySelector('img').src = image.src;
+                                });
+                            });
+
+                            document.querySelector('#popup-image span')?.addEventListener('click', () => {
+                                document.querySelector('#popup-image').style.display = 'none';
+                            });
+
+
+
+
+
+
                         })
                         .catch(error => console.error('Error fetching the HTML file:', error));
                 });
@@ -246,46 +267,7 @@
                         <a href="index.html" id="mainLink"> <span> > GERSON BARROSO</span> </a>
                         <hr style="width: 95%;" />
                         <ul>
-                            <li>
-                                <a class="" data-bs-toggle="collapse" href="#s1" role="button" aria-expanded="false"
-                                    aria-controls="s1">
-                                    <i class="bi bi-clipboard-data"></i>
-                                    <span>data analysis</span>
-                                </a>
-                                <div class="collapse multi-collapse " id="s1">
-                                    <ul>
-                                        <li data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tripleten > 2023/Aug">
-                                            <a data-page="projecto1" data-style="projecto" href="#projecto1"
-                                                class="botaoPage">
-                                                <i class='bx bxl-python'></i>
-                                                <span>Project 1</span>
-                                            </a>
-                                        </li>
-                                        <li data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tripleten > 2023/Sep">
-                                            <a data-page="projecto2" data-style="projecto" href="#projecto2"
-                                                class="botaoPage">
-                                                <i class='bx bxl-python'></i>
-                                                <span>Project 2</span>
-                                            </a>
-                                        </li>
-                                        <li data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tripleten > 2023/Oct"><a data-page="projecto3"
-                                                data-style="projecto" href="#projecto3" class="botaoPage"><i
-                                                    class='bx bxl-python'></i>
-                                                <span>Project 3</span></a>
-                                        </li>
-                                        <li data-bs-toggle="tooltip" data-bs-placement="left"
-                                            data-bs-title="Tripleten > 2023/Nov"><a data-page="projecto4"
-                                                data-style="projecto" href="#projecto4" class="botaoPage"><i
-                                                    class='bx bxl-python'></i>
-                                                <span>Project 4</span></a>
-                                        </li>
-                                    </ul>
-                                </div>
 
-                            </li>
                             <li>
 
                                 <a class="" data-bs-toggle="collapse" href="#s2" role="button" aria-expanded="true"
@@ -320,6 +302,64 @@
 
                                     </ul>
                                 </div>
+                            </li>
+                            <li>
+                                <a class="" data-bs-toggle="collapse" href="#s1" role="button" aria-expanded="false"
+                                    aria-controls="s1">
+                                    <i class="bi bi-clipboard-data"></i>
+                                    <span>data analysis</span>
+                                </a>
+                                <div class="collapse multi-collapse " id="s1">
+                                    <ul>
+                                        <li data-bs-toggle="tooltip" data-bs-placement="left"
+                                            data-bs-title="Tripleten > 2022/Nov">
+                                            <a data-page="projecto3" data-style="projecto" href="#projecto3"
+                                                class="botaoPage">
+                                                <i class='bx bxl-python'></i>
+                                                <span>Project 3</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="tooltip" data-bs-placement="left"
+                                            data-bs-title="Tripleten > 2022/Dec">
+                                            <a data-page="projecto4" data-style="projecto" href="#projecto4"
+                                                class="botaoPage">
+                                                <i class='bx bxl-python'></i>
+                                                <span>Project 4</span>
+                                            </a>
+                                        </li>
+                                        <li data-bs-toggle="tooltip" data-bs-placement="left"
+                                            data-bs-title="Tripleten > 2023/Jan"><a data-page="projecto5"
+                                                data-style="projecto" href="#projecto5" class="botaoPage"><i
+                                                    class='bx bxl-python'></i>
+                                                <span>Project 5</span></a>
+                                        </li>
+                                        <li data-bs-toggle="tooltip" data-bs-placement="left"
+                                            data-bs-title="Tripleten > 2023/Feb"><a data-page="projecto6"
+                                                data-style="projecto" href="#projecto6" class="botaoPage"><i
+                                                    class='bx bxl-python'></i>
+                                                <span>Project 6</span></a>
+                                        </li>
+                                        <li data-bs-toggle="tooltip" data-bs-placement="left"
+                                            data-bs-title="Tripleten > 2023/Feb"><a data-page="projecto7"
+                                                data-style="projecto" href="#projecto7" class="botaoPage"><i
+                                                    class='bx bxl-python'></i>
+                                                <span>Project 7</span></a>
+                                        </li>
+                                        <li data-bs-toggle="tooltip" data-bs-placement="left"
+                                            data-bs-title="Tripleten > 2023/Feb"><a data-page="projecto8"
+                                                data-style="projecto" href="#projecto8" class="botaoPage"><i
+                                                    class='bx bxl-python'></i>
+                                                <span>Project 8</span></a>
+                                        </li>
+                                        <li data-bs-toggle="tooltip" data-bs-placement="left"
+                                            data-bs-title="Tripleten > 2023/Feb"><a data-page="projecto9"
+                                                data-style="projecto" href="#projecto9" class="botaoPage"><i
+                                                    class='bx bxl-python'></i>
+                                                <span>Project 9</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+
                             </li>
                             <hr style="width: 95%;" />
 
@@ -375,8 +415,54 @@
                         recusandae deserunt fugiat.
                     </div>
                 </div>
+
+                <script>
+                    /*
+                    document.addEventListener('DOMContentLoaded', function () {
+
+                        const url = 'projecto3.html';
+                        console.log(url);
+                        // You can add additional logic here to handle the URL
+                        fetch(url)
+                            .then(response => response.text())
+                            .then(data => {
+                                const cssFileName = 'resources/custom-projecto.css';
+                                const linkElement = document.createElement('link');
+                                linkElement.rel = 'stylesheet';
+                                linkElement.href = cssFileName;
+                                document.head.appendChild(linkElement);
+                                // Load the content into the div with id rowopenpage
+                                document.getElementById('rowopenpage').innerHTML = data;
+
+
+
+                                document.querySelectorAll('.img-gallery img').forEach(image => {
+                                    console.log(image);
+                                    image.addEventListener('click', () => {
+                                        const popup = document.querySelector('.popup-image');
+                                        popup.style.display = 'block';
+                                        popup.querySelector('img').src = image.src;
+                                    });
+                                });
+
+                                document.querySelector('.popup-image span')?.addEventListener('click', () => {
+                                    document.querySelector('.popup-image').style.display = 'none';
+                                });
+                            });
+
+                    });
+                    */
+
+                </script>
+
+
             </div>
         </div>
+    </div>
+
+    <div id="popup-image" class="popup-image">
+        <span>&times;</span>
+        <img src="resources/images/p1_0.png" />
     </div>
 </body>
 

@@ -334,6 +334,10 @@ ul#main-contentpages li a.active {
     cursor: pointer;
 }
 
+#popup-image {
+    display: none;
+}
+
 @media screen and (max-width: 768px) {
 
     body {
