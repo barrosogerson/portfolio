@@ -208,7 +208,7 @@
             const sidebarIcons = document.querySelectorAll('.sidebar-icons a');
             sidebarIcons.forEach(icon => {
                 icon.addEventListener('click', function (event) {
-                    event.preventDefault();
+                    //event.preventDefault();
                     sidebarIcons.forEach(icon => icon.classList.remove('active'));
                     this.classList.toggle('active');
                 });
