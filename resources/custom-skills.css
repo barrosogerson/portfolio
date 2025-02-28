@@ -1,6 +1,10 @@
-#titlee {
-    color: red;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
+#skills .progress {
+    background-color: #777;
+    height: 3s0px;
+}
+
+#skills .bg-skills-custom {
+    background-color: #ccc;
+    color: black;
+    font-size: 1.5rem;
 }

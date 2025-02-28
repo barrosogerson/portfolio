@@ -5,17 +5,17 @@
     margin-bottom: 10px;
 }
 
-#contactos ul {
+#contactos #main-links ul {
     display: inline-block;
 }
 
-#contactos ul li {
+#contactos #main-links ul li {
     list-style: none;
     display: block;
     padding: 10px;
 }
 
-#contactos a {
+#contactos #main-links a {
     text-decoration: none;
     color: #ddd;
     display: inline-block;
@@ -24,15 +24,38 @@
     transition: all 1s;
 }
 
-#contactos a i {
+#contactos #main-links a i {
     padding: 10px;
     display: inline-block;
     font-size: 2rem;
 }
 
-#contactos a:hover {
+#contactos #main-links a:hover {
     border: 1px solid white;
     transition: all 1s;
     margin-left: 10px;
+}
 
+#additional-links {
+    color: #ccc;
+}
+
+#additional-links ul li {
+    list-style: none;
+}
+
+#additional-links ul li a {
+    text-decoration: none;
+    color: #ccc;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid transparent;
+    transition: all 1s;
+
+}
+
+#contactos #additional-links a:hover {
+    border: 1px solid white;
+    transition: all 1s;
+    margin-left: 10px;
 }

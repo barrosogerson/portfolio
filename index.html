@@ -224,16 +224,7 @@
             }
 
 
-            // Handle the resume link click
-            const resumeLink = document.querySelector('a[data-page="resume.pdf"]');
-            if (resumeLink) {
-                resumeLink.addEventListener('click', function (event) {
-                    event.preventDefault();
 
-                    //window.open(this.getAttribute('data-page'), '_blank');
-                    window.open("https://drive.google.com/file/d/1fhesBqdemxzNcmbaJ9gHK7eIgUdi6or_/view?usp=sharing", '_blank');
-                });
-            }
 
         });
 
@@ -384,12 +375,6 @@
                             </li>
                             <hr style="width: 95%;" />
 
-                            <li data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                data-bs-title="Download the .pdf resume :)">
-                                <a href="#resume" data-page="resume.pdf" class="">
-                                    <i class="bi bi-filetype-pdf" style="color: gold; font-size: 22px;"></i>
-                                    <span>resume.pdf</span></a>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -407,13 +392,24 @@
                 </div>
                 <div class="row" id="rowopenpage">
                     <div class=" col-12">
-                        <h3>Hello, I'm</h3>
-                        <h1 id="mainTitle">
-                            Gerson
-                        </h1>
-                        <h1 id="mainTitle2">
-                            Barroso
-                        </h1>
+                        <div class="row">
+
+                            <div class="col-8">
+                                <h3>Hello, I'm</h3>
+                                <h1 id="mainTitle">
+                                    Gerson
+                                </h1>
+                                <h1 id="mainTitle2">
+                                    Barroso
+                                </h1>
+                            </div>
+                            <div class="col-4">
+                                <p>
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i> Covilhã, Portugal
+                                </p>
+                            </div>
+                        </div>
+
                         <p>
                             I'm an IT Support and Automation Specialist with a strong background in technical support,
                             automation, and data analysis. With a degree in Computer Engineering, I have experience
@@ -452,12 +448,12 @@
                                     For Artists,
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a class="forAbout" data-bs-toggle="collapse" href="#gbForEng" role="button"
                                     aria-expanded="false" aria-controls="gbForEng">
                                     For Engineers
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
 
                         <div class="row collapse multi-collapseAboutMe show" id="gbForDA">
@@ -488,7 +484,7 @@
                         </div>
 
 
-                        <div class="row collapse multi-collapseAboutMe" id="gbForEng">
+                        <!-- <div class="row collapse multi-collapseAboutMe" id="gbForEng">
                             <p style="color:white">
 
                                 22 50 72 65 63 69 73 69 6F 6E 2C 20 69 6E 6E 6F 76 61 74 69 6F 6E 2C 20 61 6E 64 20 70
@@ -501,7 +497,7 @@
                             <p style="background-color: #bbb; color: #222; padding: 10px;"> HEX to STRING
                             </p>
 
-                        </div>
+                        </div> -->
 
                         <div class="row collapse multi-collapseAboutMe" id="gbForProgrammers">
                             <pre style="background-color: #bbb; color: #222; padding: 5px; text-align: left;">
@@ -561,23 +557,22 @@
     <script>
         /*
                 document.addEventListener('DOMContentLoaded', function () {
-
-                    const url = 'hobbies.html';
+        
+                    const page = "skills";
+        
+                    const url = page + '.html';
                     console.log(url);
-                    // You can add additional logic here to handle the URL
                     fetch(url)
                         .then(response => response.text())
                         .then(data => {
-                            const cssFileName = 'resources/custom-hobbies.css';
+                            const cssFileName = 'resources/custom-' + page + '.css';
                             const linkElement = document.createElement('link');
                             linkElement.rel = 'stylesheet';
                             linkElement.href = cssFileName;
                             document.head.appendChild(linkElement);
                             // Load the content into the div with id rowopenpage
                             document.getElementById('rowopenpage').innerHTML = data;
-
                         });
-
                 });
                 */
 
